@@ -1,0 +1,36 @@
+<table>
+	<tr>
+		<% @headers.each do |header| %>
+			<th><%= header %></th>
+		<% end %>
+	</tr>
+	<% @rows.each_with_index do |hash, idx| %>
+		<tr>
+			<td><%= hash[:date] %></td>
+			<td><%= hash[:time] %></td>
+			<td><%= hash[:category] %></td>
+			<td><%= hash[:amount] %></td>
+			<td><a class='edit' href="/feedings/<%= idx %>/edit"><button type="submit" class="edit">Edit Item</button></a></td>
+			<td>
+				<form class='delete' action="/feedings/<%= idx %>/destroy" method="post">
+					<button type="submit" class="delete">Delete Item</button>
+				</form>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+
+<%content_for :header_links do %>
+	<a class="add" href="/feedings/new">Add Feeding Amount</a>
+<% end %> 
+
+<% if session[:username] %>
+  <form method="post" action="/users/signout">
+  	<p class='usesr-status'>
+  		Signed in as <%= session[:username] %>
+  		<button type="submit">Sign Out</button>
+  	</p>
+<% else %>
+  <p class="user-status"><a href='/users/signin'>Sign In</a></p>
+<% end %>

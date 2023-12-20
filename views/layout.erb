@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Pet Feeding Tracker App</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans">
+		<link rel="stylesheet" href="/stylesheets/tracker.css">
+	</head>
+	<body>
+		<header>
+			<h1>Pet Feeding Tracker</h1>
+				<div class="actions">
+					<%== yield_content :header_links %>
+				</div>
+		</header>
+
+		<% if session[:success] %>
+			<div class="flash message">
+				<p><%= session.delete(:success) %></p>
+			</div>
+		<% end %>
+
+		<% if session[:error] %>
+			<div class="flash error">
+    			<p><%= session.delete(:error) %></p>
+  			</div>
+		<% end %>
+
+		<% if session[:message] %>
+          <div class='flash message'>
+            <p><%= session.delete(:message) %></p>
+          </div>
+        <% end %>
+
+		<main>
+			<%== yield %>
+		</main>
+	</body>

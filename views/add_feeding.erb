@@ -1,0 +1,24 @@
+<form action="/feedings" method="post">
+  <dl>
+    <dd>
+      <label for="category">Enter feeding category:</label>
+    </dd>
+    <dt>
+      <input name="category" type="text" value="<%= params[:category] %>">
+    </dt>
+  </dl>
+  <dl>
+    <dd>
+      <label for="amount">Enter feeding amount:</label>
+    </dd>
+    <dt>
+      <input name="amount" type="text" value="<%= params[:amount] %>">
+    </dt>
+  </dl>
+
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/feedings">Cancel</a>
+  </fieldset>
+</form>
+

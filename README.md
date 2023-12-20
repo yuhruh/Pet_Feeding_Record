@@ -1,0 +1,4 @@
+- Running Ruby version 2.6.0 for pet feeding record application.
+- Using Chrome Version 120.0.6099.109 to test the pet feeding record application.
+- Use Postgres version 14.9 to ctreate database and run table implementation.
+- First, run bundle install to make sure have all the gem which this application needs. Then, `ruby pet_feeding_tracker_persistence_ver1.rb` in your console and open the chrome type localhost:4567. Sign In `admin` for the username and `secret` as password.

@@ -1,0 +1,27 @@
+<form action="/feedings/<%= params[:id] %>" method="post">
+  <dl>
+    <dd>
+      <label for="category">Enter new feeding category you would like to modify:</label>
+    </dd>
+    <dt>
+      <input name="category" type="text" value="<%= params[:category] || @rows[:category] %>">
+    </dt>
+  </dl>
+  <dl>
+    <dd>
+      <label for="amount">Enter new feeding amount you would like to modify:</label>
+    </dd>
+    <dt>
+      <input name="amount" type="text" value="<%= params[:amount] || @rows[:amount] %>">
+    </dt>
+  </dl>
+
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/feedings">Cancel</a>
+  </fieldset>
+</form>
+
+
+
+
